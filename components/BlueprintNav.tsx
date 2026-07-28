@@ -71,4 +71,40 @@ export default function BlueprintNav({ onAIOpen }: BlueprintNavProps) {
           <div className="flex items-center gap-3 md:hidden">
             <button
               onClick={onAIOpen}
-              className="p-2 border border-[#FF6B35
+              className="p-2 border border-[#FF6B35]/50 text-[#FF6B35] hover:bg-[#FF6B35]/10 transition-all"
+              aria-label="Open Blueprint AI"
+            >
+              <Bot size={18} />
+            </button>
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2 border border-[#4A90D9]/30 text-[#4A90D9] hover:bg-[#4A90D9]/10 transition-all"
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="md:hidden bg-[#F5F0E8]/95 backdrop-blur-sm border-b border-[#4A90D9]/20">
+          <div className="px-4 py-4 space-y-2">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-3 py-2 text-sm font-mono text-[#4A90D9] hover:text-[#1E3A5F] transition-colors"
+              >
+                <span className="text-[10px] text-[#4A90D9]/50">{item.number}</span>
+                {item.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+}

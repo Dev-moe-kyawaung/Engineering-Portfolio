@@ -7,7 +7,7 @@ import TechnicalSkills from '@/components/TechnicalSkills';
 import TechnicalProjects from '@/components/TechnicalProjects';
 import BlueprintNav from '@/components/BlueprintNav';
 import BlueprintFooter from '@/components/BlueprintFooter';
-import AIArchitectureDiagram from '@/components/AIArchitectureDiagram';
+import AiArchitectureDiagram from '@/components/AiArchitectureDiagram';
 import { useState } from 'react';
 
 export default function EngineeringPortfolio() {
@@ -34,7 +34,7 @@ export default function EngineeringPortfolio() {
       <BlueprintFooter />
 
       {/* AI Architecture Diagram Generator */}
-      <AIArchitectureDiagram
+      <AiArchitectureDiagram
         isOpen={showAIDiagram}
         onClose={() => setShowAIDiagram(false)}
       />
